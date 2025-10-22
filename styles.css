@@ -112,7 +112,7 @@ body.light-theme .search-bar button:hover {
     box-shadow: 0 0 10px #0066cc;
 }
 
-.theme-toggle button, .sort-options button {
+.theme-toggle button, .sort-options button, .random-word button {
     padding: 10px 20px;
     border: none;
     border-radius: 25px;
@@ -124,19 +124,21 @@ body.light-theme .search-bar button:hover {
 }
 
 body.light-theme .theme-toggle button,
-body.light-theme .sort-options button {
+body.light-theme .sort-options button,
+body.light-theme .random-word button {
     background: #0066cc;
     color: #fff;
 }
 
-.theme-toggle button:hover, .sort-options button:hover {
+.theme-toggle button:hover, .sort-options button:hover, .random-word button:hover {
     background: #00b7ff;
     box-shadow: 0 0 10px #00f7ff;
     transform: scale(1.05);
 }
 
 body.light-theme .theme-toggle button:hover,
-body.light-theme .sort-options button:hover {
+body.light-theme .sort-options button:hover,
+body.light-theme .random-word button:hover {
     background: #004c99;
     box-shadow: 0 0 10px #0066cc;
 }
@@ -149,7 +151,7 @@ body.light-theme .sort-options button:hover {
     margin-bottom: 20px;
 }
 
-.alphabet-filter, .pos-filter {
+.alphabet-filter, .pos-filter, .word-stats {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
@@ -180,6 +182,24 @@ body.light-theme .alphabet-filter button:hover,
 body.light-theme .pos-filter button:hover {
     background: #0066cc;
     color: #fff;
+}
+
+.word-stats {
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.word-stats span {
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ddd;
+    font-size: 0.9em;
+}
+
+body.light-theme .word-stats span {
+    background: rgba(0, 0, 0, 0.1);
+    color: #555;
 }
 
 .word-list {
@@ -224,6 +244,42 @@ body.light-theme .word-card h3 {
 
 body.light-theme .word-card p {
     color: #555;
+}
+
+.random-word-display {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.random-word-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+body.light-theme .random-word-card {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.random-word-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+body.light-theme .random-word-card:hover {
+    box-shadow: 0 0 15px rgba(0, 102, 204, 0.5);
+}
+
+.random-word-card h3 {
+    margin: 0;
+    color: #00f7ff;
+}
+
+body.light-theme .random-word-card h3 {
+    color: #0066cc;
 }
 
 .changelog-list {
@@ -375,6 +431,84 @@ body.light-theme .footer a:hover {
     color: #004c99;
 }
 
+.random-word {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 0 10px;
+}
+
+.random-word button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #00f7ff;
+    color: #000;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+body.light-theme .random-word button {
+    background: #0066cc;
+    color: #fff;
+}
+
+.random-word button:hover {
+    background: #00b7ff;
+    box-shadow: 0 0 10px #00f7ff;
+    transform: scale(1.05);
+}
+
+body.light-theme .random-word button:hover {
+    background: #004c99;
+    box-shadow: 0 0 10px #0066cc;
+}
+
+.random-word-display {
+    min-height: 50px;
+    width: 100%;
+    max-width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.random-word-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: fit-content;
+    min-width: 120px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .random-word-card {
+    background: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.random-word-card h3 {
+    margin: 0;
+    font-size: 1.6em;
+    color: #00f7ff;
+    text-shadow: 0 0 8px rgba(0, 247, 255, 0.5);
+}
+
+body.light-theme .random-word-card h3 {
+    color: #0066cc;
+    text-shadow: none;
+}
+
+.qr-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media (max-width: 600px) {
     h1 {
         font-size: 1.8em;
@@ -392,7 +526,7 @@ body.light-theme .footer a:hover {
         padding: 6px 10px;
         font-size: 0.9em;
     }
-    .theme-toggle button, .sort-options button {
+    .theme-toggle button, .sort-options button, .random-word button {
         padding: 8px 15px;
         font-size: 0.9em;
     }
@@ -402,5 +536,9 @@ body.light-theme .footer a:hover {
     }
     .changelog-entry ul {
         padding-left: 15px;
+    }
+    .word-stats span {
+        font-size: 0.8em;
+        padding: 6px 10px;
     }
 }

@@ -66,6 +66,7 @@ function displayWords(wordArray) {
     });
 
     updatePagination(wordArray);
+    updateWordStats();
 }
 
 function updatePagination(wordArray) {
@@ -74,6 +75,22 @@ function updatePagination(wordArray) {
     document.getElementById('prevButton').disabled = currentPage === 1;
     document.getElementById('nextButton').disabled = currentPage === totalPages;
     document.getElementById('pageInput').max = totalPages;
+}
+
+function updateWordStats() {
+    document.getElementById('totalWords').textContent = `总单词数: ${words.length}`;
+    document.getElementById('filteredWords').textContent = `当前显示: ${currentWords.length}`;
+}
+
+function showRandomWord() {
+    const randomWordDiv = document.getElementById('randomWord');
+    const randomIndex = Math.floor(Math.random() * words.length);
+    const randomWord = words[randomIndex].word;
+    randomWordDiv.innerHTML = `
+        <div class="random-word-card">
+            <h3>${randomWord}</h3>
+        </div>
+    `;
 }
 
 function searchWords() {
@@ -129,7 +146,7 @@ function applyFiltersAndSort() {
     if (currentSort === 'asc') {
         filteredWords.sort((a, b) => a.word.localeCompare(b.word));
     } else if (currentSort === 'desc') {
-        filteredWords.sort((a, b) => b.word.localeCompare(b.word));
+        filteredWords.sort((a, b) => b.word.localeCompare(a.word));
     }
 
     currentWords = filteredWords;
@@ -172,4 +189,5 @@ document.getElementById('searchInput').addEventListener('input', searchWords);
 
 document.addEventListener('DOMContentLoaded', () => {
     displayWords(words);
+    updateWordStats();
 });

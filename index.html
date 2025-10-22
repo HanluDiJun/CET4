@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>寒露帝君四级单词</title>
+    <title>寒露帝君四级单词 - 主页</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-theme">
     <div class="container">
         <h1>英语四级单词</h1>
         <h1>寒露帝君制</h1>
-        <h1>2025年10月22日 0.1.0版本</h1>
+        <h1>2025年10月22日 0.2.0版本</h1>
         <div class="controls">
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="输入单词或翻译搜索...">
@@ -23,7 +23,12 @@
                 <button onclick="sortWords('asc')">字母升序</button>
                 <button onclick="sortWords('desc')">字母降序</button>
             </div>
+            <div class="random-word">
+                <button onclick="showRandomWord()">随机抽词</button>
+                <div id="randomWord" class="random-word-display"></div>
+            </div>
         </div>
+
         <div class="filters">
             <div class="alphabet-filter">
                 <button onclick="filterByLetter('all')">全部</button>
@@ -49,8 +54,14 @@
                 <button onclick="filterByPOS('adj')">形容词</button>
                 <button onclick="filterByPOS('adv')">副词</button>
             </div>
+            <div class="word-stats">
+                <span id="totalWords">总单词数: 0</span>
+                <span id="filteredWords">当前显示: 0</span>
+            </div>
         </div>
+
         <div id="wordList" class="word-list"></div>
+
         <div class="pagination">
             <button onclick="prevPage()" id="prevButton" disabled>上一页</button>
             <span id="pageInfo"></span>
@@ -60,7 +71,8 @@
         </div>
     </div>
     <footer class="footer">
-        <p>&copy; 寒露帝君制 2025年10月22日 0.1.0版本 | <a href="changelog.html">更新日志</a></p>
+        <p>&copy; 寒露帝君制 2025年10月22日 0.2.0版本</p>
+        <p><a href="index.html">单词列表</a> | <a href="changelog.html">更新日志</a> | <a href="support.html">支持开发者</a></p>
     </footer>
     <script src="script.js"></script>
 </body>
