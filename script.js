@@ -1,3 +1,5 @@
+const VERSION = '0.2.2'; // 定义版本号，修改这里即可同步更新所有文件
+
 const words = [
     { word: "bow", translation: "v. 鞠躬；弯腰", pos: "v" },
     { word: "laser", translation: "n. 激光", pos: "n" },
@@ -39,7 +41,8 @@ const words = [
     { word: "ice-cream", translation: "n. 冰淇淋", pos: "n" },
     { word: "book", translation: "n. 书；v. 预定；预约；登记", pos: "n,v" },
     { word: "fork", translation: "n. 叉；分叉；岔路", pos: "n" },
-    { word: "fall", translation: "v. 下降", pos: "v" },
+    { word: "fall", translation: "v. 下降；发生；适逢；被打败", pos: "v" },
+    { word: "bore", translation: "v.使厌烦", pos: "v" },
     { word: "steel", translation: "n. 钢铁", pos: "n" },
     { word: "reporter", translation: "n. 记者", pos: "n" },
     { word: "eighty", translation: "adj. 八十的", pos: "adj" },
@@ -73,11 +76,9 @@ const words = [
     { word: "evident", translation: "adj. 显然的；明显的", pos: "adj" },
     { word: "aunt", translation: "n. 小姨", pos: "n" },
     { word: "joyful", translation: "adj. 愉快的", pos: "adj" },
-    { word: "fall", translation: "v. 发生；适逢；被打败", pos: "v" },
     { word: "class", translation: "v. 把…分组；n. 课；班级", pos: "v,n" },
     { word: "altogether", translation: "adv. 完全；总而言之", pos: "adv" },
     { word: "forever", translation: "adv. 永远；总是 n. 极长的一段时间", pos: "adv,n" },
-    { word: "rero", translation: "n. 某物", pos: "n" },
     { word: "extreme", translation: "adj.极端的", pos: "adj" }
 ];
 
@@ -226,6 +227,11 @@ function toggleTheme() {
 document.getElementById('searchInput').addEventListener('input', searchWords);
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 动态插入版本号到页面
+    const versionElements = document.querySelectorAll('.version');
+    versionElements.forEach(element => {
+        element.textContent = VERSION;
+    });
     displayWords(words);
     updateWordStats();
 });
