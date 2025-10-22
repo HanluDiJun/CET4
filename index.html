@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寒露帝君四级单词</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <h1>英语四级单词</h1>
+        <h1>寒露帝君制</h1>
+        <h1>2025年10月22日 0.1.0版本</h1>
+        <div class="controls">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="输入单词或翻译搜索...">
+                <button onclick="searchWords()">搜索</button>
+            </div>
+            <div class="theme-toggle">
+                <button onclick="toggleTheme()">切换主题</button>
+            </div>
+            <div class="sort-options">
+                <button onclick="sortWords('asc')">字母升序</button>
+                <button onclick="sortWords('desc')">字母降序</button>
+            </div>
+        </div>
+        <div class="filters">
+            <div class="alphabet-filter">
+                <button onclick="filterByLetter('all')">全部</button>
+                <button onclick="filterByLetter('A')">A</button>
+                <button onclick="filterByLetter('B')">B</button>
+                <button onclick="filterByLetter('C')">C</button>
+                <button onclick="filterByLetter('D')">D</button>
+                <button onclick="filterByLetter('F')">F</button>
+                <button onclick="filterByLetter('G')">G</button>
+                <button onclick="filterByLetter('H')">H</button>
+                <button onclick="filterByLetter('I')">I</button>
+                <button onclick="filterByLetter('L')">L</button>
+                <button onclick="filterByLetter('M')">M</button>
+                <button onclick="filterByLetter('P')">P</button>
+                <button onclick="filterByLetter('S')">S</button>
+                <button onclick="filterByLetter('T')">T</button>
+                <button onclick="filterByLetter('V')">V</button>
+            </div>
+            <div class="pos-filter">
+                <button onclick="filterByPOS('all')">全部词性</button>
+                <button onclick="filterByPOS('n')">名词</button>
+                <button onclick="filterByPOS('v')">动词</button>
+                <button onclick="filterByPOS('adj')">形容词</button>
+                <button onclick="filterByPOS('adv')">副词</button>
+            </div>
+        </div>
+        <div id="wordList" class="word-list"></div>
+        <div class="pagination">
+            <button onclick="prevPage()" id="prevButton" disabled>上一页</button>
+            <span id="pageInfo"></span>
+            <input type="number" id="pageInput" min="1" placeholder="页码">
+            <button onclick="jumpToPage()">跳转</button>
+            <button onclick="nextPage()" id="nextButton">下一页</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 寒露帝君制 2025年10月22日 0.1.0版本 | <a href="changelog.html">更新日志</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
