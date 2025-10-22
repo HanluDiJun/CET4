@@ -38,7 +38,47 @@ const words = [
     { word: "germ", translation: "n. 细菌", pos: "n" },
     { word: "ice-cream", translation: "n. 冰淇淋", pos: "n" },
     { word: "book", translation: "n. 书；v. 预定；预约；登记", pos: "n,v" },
-    { word: "fork", translation: "n. 叉；分叉；岔路", pos: "n" }
+    { word: "fork", translation: "n. 叉；分叉；岔路", pos: "n" },
+    { word: "fall", translation: "v. 下降", pos: "v" },
+    { word: "steel", translation: "n. 钢铁", pos: "n" },
+    { word: "reporter", translation: "n. 记者", pos: "n" },
+    { word: "eighty", translation: "adj. 八十的", pos: "adj" },
+    { word: "booth", translation: "n. 电话亭", pos: "n" },
+    { word: "smog", translation: "n. 烟雾", pos: "n" },
+    { word: "meal", translation: "n. 一餐", pos: "n" },
+    { word: "steal", translation: "v. 偷盗", pos: "v" },
+    { word: "save", translation: "v. 节约；救助", pos: "v" },
+    { word: "land", translation: "n. 陆地", pos: "n" },
+    { word: "tremble", translation: "v. 颤抖", pos: "v" },
+    { word: "champion", translation: "n. 冠军；优胜者", pos: "n" },
+    { word: "fierce", translation: "adj. 激烈的", pos: "adj" },
+    { word: "dull", translation: "adj. 缓和；枯燥的", pos: "adj" },
+    { word: "vigorous", translation: "adj. 精力充沛的", pos: "adj" },
+    { word: "little", translation: "adj. 小的；微不足道的", pos: "adj" },
+    { word: "waterfall", translation: "n. 瀑布", pos: "n" },
+    { word: "discard", translation: "v. 丢掉", pos: "v" },
+    { word: "inquiry", translation: "n. 调查；打听", pos: "n" },
+    { word: "map", translation: "v. 测绘 n. 地图", pos: "v,n" },
+    { word: "emerge", translation: "v. 出现；兴起", pos: "v" },
+    { word: "deer", translation: "n. 鹿", pos: "n" },
+    { word: "barrier", translation: "n. 障碍；界线", pos: "n" },
+    { word: "skin", translation: "n. 兽皮", pos: "n" },
+    { word: "concentrate", translation: "v. 全神贯注于", pos: "v" },
+    { word: "root", translation: "v. 生根；使固定", pos: "v" },
+    { word: "aware", translation: "adj. 意识到的", pos: "adj" },
+    { word: "state", translation: "v. 说明；陈述；宣布 n. 国；州", pos: "v,n" },
+    { word: "dish", translation: "n. 盘子；餐具", pos: "n" },
+    { word: "hence", translation: "adv. 因此", pos: "adv" },
+    { word: "asleep", translation: "adj. 睡着的", pos: "adj" },
+    { word: "evident", translation: "adj. 显然的；明显的", pos: "adj" },
+    { word: "aunt", translation: "n. 小姨", pos: "n" },
+    { word: "joyful", translation: "adj. 愉快的", pos: "adj" },
+    { word: "fall", translation: "v. 发生；适逢；被打败", pos: "v" },
+    { word: "class", translation: "v. 把…分组；n. 课；班级", pos: "v,n" },
+    { word: "altogether", translation: "adv. 完全；总而言之", pos: "adv" },
+    { word: "forever", translation: "adv. 永远；总是 n. 极长的一段时间", pos: "adv,n" },
+    { word: "rero", translation: "n. 某物", pos: "n" },
+    { word: "extreme", translation: "adj.极端的", pos: "adj" }
 ];
 
 let currentPage = 1;
@@ -96,8 +136,7 @@ function showRandomWord() {
 function searchWords() {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
     currentWords = words.filter(wordObj =>
-        wordObj.word.toLowerCase().includes(searchTerm) ||
-        wordObj.translation.toLowerCase().includes(searchTerm)
+        wordObj.word.toLowerCase().startsWith(searchTerm)
     );
     currentPage = 1;
     applyFiltersAndSort();
@@ -138,8 +177,7 @@ function applyFiltersAndSort() {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
     if (searchTerm) {
         filteredWords = filteredWords.filter(wordObj =>
-            wordObj.word.toLowerCase().includes(searchTerm) ||
-            wordObj.translation.toLowerCase().includes(searchTerm)
+            wordObj.word.toLowerCase().startsWith(searchTerm)
         );
     }
 
