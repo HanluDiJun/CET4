@@ -1,5 +1,3 @@
-const VERSION = '0.2.2'; // 定义版本号，修改这里即可同步更新所有文件
-
 const words = [
     { word: "bow", translation: "v. 鞠躬；弯腰", pos: "v" },
     { word: "laser", translation: "n. 激光", pos: "n" },
